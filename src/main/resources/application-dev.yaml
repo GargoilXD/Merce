@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    show-sql: true
+    open-in-view: true
+  datasource:
+    url: ${DEV_DB_URL}
+    username: ${DEV_DB_USERNAME}
+    password: ${DEV_DB_PASSWORD}
+  hibernate:
+    ddl-auto: create-drop
+  devtools:
+    add-properties: true
+
+logging:
+  level:
+    web: DEBUG
+
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

@@ -1,3 +1,10 @@
 spring:
   application:
     name: Merce
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  profiles:
+    active: dev
+
+server:
+  port: ${PORT:8080}
