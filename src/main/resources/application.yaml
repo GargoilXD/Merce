@@ -1,8 +1,8 @@
 spring:
   application:
     name: Merce
-#  jpa:
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
   profiles:
     active: dev
 
