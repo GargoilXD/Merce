@@ -1,4 +1,4 @@
-package com.merce.model.db;
+package com.merce.model.db.enums;
 
 public enum OrderStatus {
     PENDING,

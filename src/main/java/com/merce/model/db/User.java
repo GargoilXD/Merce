@@ -1,6 +1,7 @@
 package com.merce.model.db;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.merce.model.db.enums.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
