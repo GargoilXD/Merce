@@ -12,6 +12,14 @@ import java.util.UUID;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @ToString(exclude = {"order", "product"})
 @Entity(name = "order_items")
+@Table(
+    indexes = {
+        @Index(name = "idx_order_item_order_id", columnList = "order_id"),
+        @Index(name = "idx_order_item_product_id", columnList = "product_id"),
+        @Index(name = "idx_order_item_price", columnList = "price_at_purchase")
+    },
+    uniqueConstraints = @UniqueConstraint(columnNames = {"order_id", "product_id"})
+)
 public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -28,7 +36,7 @@ public class OrderItem {
     private Product product;
 
     @NotNull(message = "Price At Purchase is required") @Positive(message = "Price At Purchase must be positive")
-    @Column(name = "price_at_purchase", nullable = false, precision = 19, scale = 4)
+    @Column(name = "price_at_purchase", nullable = false, precision = 19, scale = 4, updatable = false)
     private BigDecimal priceAtPurchase;
 
     @NotNull(message = "Quantity is required") @Min(value = 1, message = "quantity minimum is 1")

@@ -1,5 +1,6 @@
 package com.merce.model.db;
 
+import com.merce.model.db.enums.OrderStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;

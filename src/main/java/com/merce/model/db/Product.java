@@ -13,6 +13,11 @@ import java.util.UUID;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity(name = "products")
+@Table(indexes = {
+        @Index(name = "idx_product_name", columnList = "name"),
+        @Index(name = "idx_product_price", columnList = "price"),
+        @Index(name = "idx_product_stock", columnList = "stock_quantity")
+})
 @ToString(exclude = {"description"})
 public class Product {
     @Id
